@@ -24,7 +24,9 @@ const port = 3000;
 let messages = [];
 
 io.on("connection", (socket) => {
-  console.log(`Socket conectando: ${socket.id}`);
+  console.log(`---------------------------------------------------`);
+  console.log(`Socket conectado: ${socket.id}`);
+  console.log(`---------------------------------------------------`);
 
   socket.emit("previousMessages", messages);
 
@@ -35,6 +37,7 @@ io.on("connection", (socket) => {
 
   socket.on("disconnect", function () {
     console.log(`Socket desconectando: ${socket.id}`);
+    console.log(`---------------------------------------------------`);
   });
 });
 
